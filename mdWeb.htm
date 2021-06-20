@@ -133,6 +133,10 @@ a:link {
 			<p>You can see the statics below:</p>
 			<br>
 
+			<!-- where i display the statistic and the patient data -->
+			<p id="tablePatient">Fetch a file to change this text.</p>
+			<div id="myData"></div>
+
 			<p>Thank you for your time!</p>
 			<p>created by Chao Glen Xu</p>
 
@@ -153,14 +157,79 @@ a:link {
 	<script>
 		document.getElementById("demo1").innerHTML = "this is test for javascript";
 		console.log("hellp");
-		console.log(fetch('http://hapi.fhir.org/baseR4/Patient?_pretty=true'))
+		/////////////////////////////////////////////////////////////////////////
+		//console.log(fetch('http://hapi.fhir.org/baseR4/Patient?_pretty=true'))
 
-		fetch('http://hapi.fhir.org/baseR4/Patient?_pretty=true')
-			.then(res => console.log(res))
+		//fetch('http://hapi.fhir.org/baseR4/Patient?_pretty=true')
+		//	.then(res => console.log(res))
 
+		//fetch('http://hapi.fhir.org/baseR4/Patient/1160885/_history/1?_format=json&_pretty=true')
+		//	.then(res => console.log(res))
+		//////////////////////////////////////////////////////////////////////////
+
+		//fetch('http://hapi.fhir.org/baseR4/Patient?_pretty=true')
+		//	.then(res => res.json())
+		//	.then(data => console.log(data))
+		//////////////////////////////////////////////////////////////////////////
+
+
+
+		/*
+		//document.getElementById("tablePatient").innerHTML = ;
+		//fetch('http://hapi.fhir.org/baseR4/Patient?_pretty=true')
+		//	.then(res => res.json())
+		//	.then(data => console.log(data))
+
+		//code the fetch into funcitons
 		fetch('http://hapi.fhir.org/baseR4/Patient?_pretty=true')
+			.then(function (response){
+				//the JSON data will arrive here
+				return response.json();
+			})
+			.then(function (data){
+				appendData(data);
+			})
+			.catch(function (err) {
+				//if an error occured, you will catch it here
+				console.log('error:' + err);
+			});
+
+		function appendData(data){
+			var mainContainer = document.getElementById("myData");
+			for (var i = 0; i < data.length; i++){
+				var div = document.createElement("div");
+				div.innerHTML = 'name: ' + data[i] + 'lastname ';
+				mainContainer.appendChild(div);
+			}
+		}
+		*/
+
+		fetch('http://hapi.fhir.org/baseR4/Patient/1160885/_history/1?_format=json&_pretty=true')
 			.then(res => res.json())
 			.then(data => console.log(data))
+
+				//code the fetch(different http) into funcitons
+		fetch('http://hapi.fhir.org/baseR4/Patient/1160885/_history/1?_format=json&_pretty=true')
+			.then(function (response){
+				//the JSON data will arrive here
+				return response.json().toString();
+			})
+			.then(function (data){
+				appendData(data);
+			})
+			.catch(function (err) {
+				//if an error occured, you will catch it here
+				console.log('error:' + err);
+			});
+
+		function appendData(data){
+			var mainContainer = document.getElementById("myData");
+			for (var i = 0; i < data.length; i++){
+				var div = document.createElement("div");
+				div.innerHTML = 'name: ' + data[i] + 'lastname ';
+				mainContainer.appendChild(div);
+			}
+		}
 
 	</script>
 </body>
