@@ -136,6 +136,14 @@ a:link {
 			<!-- where i display the statistic and the patient data -->
 			<p id="tablePatient">Fetch a file to change this text.</p>
 			<div id="myData"></div>
+			<div class="container">
+				<table class="table table-stripped">
+					<tbody id="data">
+					
+					</tbody>
+				</table>
+			</div>
+
 
 			<p>Thank you for your time!</p>
 			<p>created by Chao Glen Xu</p>
@@ -172,19 +180,50 @@ a:link {
 		//	.then(data => console.log(data))
 		//////////////////////////////////////////////////////////////////////////
 
+		//Display JSON Data in Table Using JAVASCRIPT - JS , JSON
+		fetch('http://hapi.fhir.org/baseR4/Patient?_pretty=true').then(
+				res=>{
+					res.json().then(
+						data=>{
+							console.log(data);
+							var temp = "567";
+							//temp = data.entry[0].fullUrl;
+							temp = data.entry[0].resource.birthDate;
+							document.getElementById("data").innerHTML = temp;
+							
+							if(data.length >0){
+								var temp = "567";
 
+								temp = data.id;
+								/*
+								//----start for loop
+
+								data.forEach((u)=>{
+									temp += "<tr>";
+									temp += "<td>" + u.birthDate + "</td>";
+									temp += "<td>" + u.id + "</td></tr>";
+								})
+								//----close for loop
+								*/
+								document.getElementById("data").innerHTML = temp;
+							}
+						}
+					)
+				}
+			)
 
 		/*
 		//document.getElementById("tablePatient").innerHTML = ;
-		//fetch('http://hapi.fhir.org/baseR4/Patient?_pretty=true')
-		//	.then(res => res.json())
-		//	.then(data => console.log(data))
+		fetch('http://hapi.fhir.org/baseR4/Patient?_pretty=true')
+			.then(res => res.json())
+			.then(data => console.log(data))
+
 
 		//code the fetch into funcitons
 		fetch('http://hapi.fhir.org/baseR4/Patient?_pretty=true')
 			.then(function (response){
 				//the JSON data will arrive here
-				return response.json();
+				return response.json().toString();
 			})
 			.then(function (data){
 				appendData(data);
@@ -193,6 +232,8 @@ a:link {
 				//if an error occured, you will catch it here
 				console.log('error:' + err);
 			});
+
+
 
 		function appendData(data){
 			var mainContainer = document.getElementById("myData");
@@ -203,6 +244,8 @@ a:link {
 			}
 		}
 		*/
+
+		/*
 
 		fetch('http://hapi.fhir.org/baseR4/Patient/1160885/_history/1?_format=json&_pretty=true')
 			.then(res => res.json())
@@ -226,10 +269,12 @@ a:link {
 			var mainContainer = document.getElementById("myData");
 			for (var i = 0; i < data.length; i++){
 				var div = document.createElement("div");
-				div.innerHTML = 'name: ' + data[i] + 'lastname ';
+				div.innerHTML = ' ' + data[i] + ' ';
 				mainContainer.appendChild(div);
 			}
 		}
+		*/
+
 
 	</script>
 </body>
