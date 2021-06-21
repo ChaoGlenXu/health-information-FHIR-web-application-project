@@ -124,29 +124,42 @@ a:link {
 		</header>
 
 		<div class="letter">
-			<p>Hello, welcome to use this web application created by Chao Glen Xu!</p>
-			<p>You can fetch the data of patients from FHIR server by clicking the bottom:
+			<p>Hello, welcome to use this web application made by Chao Glen Xu!</p>
+			<p>By clicking this bottom, you can open up a new tab to fetch the latest data of patients from the HAPI FHIR server:
 </p>
 			<div class="fetchBottom">
-				<a class= "btn" href="#" target="_blank"> Fetch Data</a>
+				<a class= "btn" href="#" target="_blank">New Tab For Lastest Data</a>
 			</div>	
 			<p>You can see the statics below:</p>
+			<p>Number of Patients: 20  </p>
+			<p id= "averageAge">Average of Ages: All Ages Are Not Found</p>
+
 			<br>
 
 			<!-- where i display the statistic and the patient data -->
-			<p id="tablePatient">Fetch a file to change this text.</p>
+			<p id="tablePatient"></p>
 			<div id="myData"></div>
 			<div class="container">
-				<table class="table table-stripped">
+				<table class="table table-stripped", style="width:100%">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Birth Date</th>
+							<th>Gender</th>
+							<th>City</th>
+						</tr>
+					</thead>
 					<tbody id="data">
-					
+						
 					</tbody>
 				</table>
 			</div>
 
-
+			<br>
+			<p>The default patients can be retrieved at this time is 20</p>
+			<br>
 			<p>Thank you for your time!</p>
-			<p>this web application is created by Chao Glen Xu</p>
+			<p>This web application is developed by Chao Glen Xu</p>
 
 			<p id="demo1"></p>
 
@@ -163,7 +176,7 @@ a:link {
 
 
 	<script>
-		document.getElementById("demo1").innerHTML = "this is test for javascript";
+		//document.getElementById("demo1").innerHTML = "this is test for javascript";
 		console.log("hellp");
 		/////////////////////////////////////////////////////////////////////////
 		//console.log(fetch('http://hapi.fhir.org/baseR4/Patient?_pretty=true'))
@@ -180,13 +193,13 @@ a:link {
 		//	.then(data => console.log(data))
 		//////////////////////////////////////////////////////////////////////////
 
-		//Display JSON Data in Table Using JAVASCRIPT - JS , JSON
+		//Display JSON Data in Table 
 		fetch('http://hapi.fhir.org/baseR4/Patient?_pretty=true').then(
 				res=>{
 					res.json().then(
 						data=>{
 							console.log(data);
-							var temp = "567";
+							var temp = "";
 						/*	//temp = data.entry[0].fullUrl;
 							temp = data.entry[0].resource.birthDate;
 							//temp = data.entry.length;
@@ -209,89 +222,43 @@ a:link {
 							}
 							document.getElementById("data").innerHTML = temp;
 
-							if(data.length >0){
-								var temp = "567";
 
-								temp = data.id;
-								/*
-								//----start for loop
-
-								data.forEach((u)=>{
-									temp += "<tr>";
-									temp += "<td>" + u.birthDate + "</td>";
-									temp += "<td>" + u.id + "</td></tr>";
-								})
-								//----close for loop
-								*/
-								document.getElementById("data").innerHTML = temp;
-							}
 						}
 					)
 				}
 			)
 
-		/*
-		//document.getElementById("tablePatient").innerHTML = ;
-		fetch('http://hapi.fhir.org/baseR4/Patient?_pretty=true')
-			.then(res => res.json())
-			.then(data => console.log(data))
+
+		//Calculate the age based on JSON data
+		fetch('http://hapi.fhir.org/baseR4/Patient?_pretty=true').then(
+				res=>{
+					res.json().then(
+						data=>{
+							console.log(data);
+							var avgAge = 0;
+							var date =1;
+							var numberOfAges = 0;
+
+							for(let i = 0; i < data.entry.length; i++){
+								var string = (data.entry[i].resource.birthDate);
+								//let reg = /\d+/g;
+								//date = string.match(reg);
+								if(typeof data.entry[i].resource.birthDate != "undefined"){
+									numberOfAges = numberOfAges + 1;
+									date = parseInt(string, 10);
+									var age = 2021 - date;
+									avgAge = avgAge + age;	
+								}
 
 
-		//code the fetch into funcitons
-		fetch('http://hapi.fhir.org/baseR4/Patient?_pretty=true')
-			.then(function (response){
-				//the JSON data will arrive here
-				return response.json().toString();
-			})
-			.then(function (data){
-				appendData(data);
-			})
-			.catch(function (err) {
-				//if an error occured, you will catch it here
-				console.log('error:' + err);
-			});
+							}
+							avgAge = avgAge/numberOfAges;
+							document.getElementById("averageAge").innerHTML = "Average of Ages: " + avgAge + " years old";
 
-
-
-		function appendData(data){
-			var mainContainer = document.getElementById("myData");
-			for (var i = 0; i < data.length; i++){
-				var div = document.createElement("div");
-				div.innerHTML = 'name: ' + data[i] + 'lastname ';
-				mainContainer.appendChild(div);
-			}
-		}
-		*/
-
-		/*
-
-		fetch('http://hapi.fhir.org/baseR4/Patient/1160885/_history/1?_format=json&_pretty=true')
-			.then(res => res.json())
-			.then(data => console.log(data))
-
-				//code the fetch(different http) into funcitons
-		fetch('http://hapi.fhir.org/baseR4/Patient/1160885/_history/1?_format=json&_pretty=true')
-			.then(function (response){
-				//the JSON data will arrive here
-				return response.json().toString();
-			})
-			.then(function (data){
-				appendData(data);
-			})
-			.catch(function (err) {
-				//if an error occured, you will catch it here
-				console.log('error:' + err);
-			});
-
-		function appendData(data){
-			var mainContainer = document.getElementById("myData");
-			for (var i = 0; i < data.length; i++){
-				var div = document.createElement("div");
-				div.innerHTML = ' ' + data[i] + ' ';
-				mainContainer.appendChild(div);
-			}
-		}
-		*/
+						}
+					)
+				}
+			)
 
 
 	</script>
