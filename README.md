@@ -20,9 +20,10 @@
 
   Below is how it look like if you open this project on Google Chrome browser
 
-![Screen Shot 2021-06-21 at 5 16 01 AM](https://user-images.githubusercontent.com/59375616/122738218-c7b96f00-d24f-11eb-9cca-a617558110e4.png)
+![Screen Shot 2021-06-21 at 6 53 37 AM](https://user-images.githubusercontent.com/59375616/122751166-68625b80-d25d-11eb-889a-852f6e4259b1.png)
 
-![Screen Shot 2021-06-21 at 5 17 06 AM](https://user-images.githubusercontent.com/59375616/122738376-ed467880-d24f-11eb-8eab-d0b45a5971b0.png)
+![Screen Shot 2021-06-21 at 6 54 08 AM](https://user-images.githubusercontent.com/59375616/122751228-7adc9500-d25d-11eb-85ad-d9c1ded9070f.png)
+
 
 ##    3. how you can test out my web application on your computer
 
@@ -37,8 +38,8 @@ Note that the data could look different when you click the button or refresh the
 ![Screen Shot 2021-06-21 at 5 30 21 AM](https://user-images.githubusercontent.com/59375616/122740255-cab55f00-d251-11eb-9be1-43387f31363b.png)
 
 if you want to use this web application or test out this web application: 
-     - Firstly, you can download this zip file and unzip this file.
-     - Secondly, you can just open the file with HTML extension. 
+- Firstly, you can download this zip file and unzip this file.
+- Secondly, you can just open the file with HTML extension. 
      
 ###    Note that my HTML code, CSS code, and Javascript code are all in this HTML file since this is a small project. 
       
@@ -57,6 +58,11 @@ Now I will explain how I implemented this project:
 
 ![Screen Shot 2021-06-21 at 5 48 51 AM](https://user-images.githubusercontent.com/59375616/122742836-5def9400-d254-11eb-8fe1-be99fa608290.png)
 
-      Yeah, So that's the end of the documentation for this project. If you have more question about this project, feel free to contact my through email. My email is : chaoglen.xu@mail.utoronto.ca
+      Yeah, So that's the end of the documentation for this project. 
+      
+      If you have more question about this project, feel free to contact my through email. 
+      
+      My email is : chaoglen.xu@mail.utoronto.ca
+      
       Thank you for your time!
 
