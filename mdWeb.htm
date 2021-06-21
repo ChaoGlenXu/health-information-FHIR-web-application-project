@@ -126,7 +126,7 @@ a:link {
 		<div class="letter">
 			<p>Hello, welcome to use this web application made by Chao Glen Xu!</p>
 			<p>By clicking this bottom, you can open up a new tab to fetch the latest data of patients from the HAPI FHIR server:
-</p>
+			</p>
 			<div class="fetchBottom">
 				<a class= "btn" href="#" target="_blank">New Tab For Lastest Data</a>
 			</div>	
@@ -176,44 +176,28 @@ a:link {
 
 
 	<script>
-		//document.getElementById("demo1").innerHTML = "this is test for javascript";
+		//this is for testing 
 		console.log("hellp");
-		/////////////////////////////////////////////////////////////////////////
-		//console.log(fetch('http://hapi.fhir.org/baseR4/Patient?_pretty=true'))
 
-		//fetch('http://hapi.fhir.org/baseR4/Patient?_pretty=true')
-		//	.then(res => console.log(res))
-
-		//fetch('http://hapi.fhir.org/baseR4/Patient/1160885/_history/1?_format=json&_pretty=true')
-		//	.then(res => console.log(res))
-		//////////////////////////////////////////////////////////////////////////
-
-		//fetch('http://hapi.fhir.org/baseR4/Patient?_pretty=true')
-		//	.then(res => res.json())
-		//	.then(data => console.log(data))
-		//////////////////////////////////////////////////////////////////////////
-
-		//Display JSON Data in Table 
+		//Display JSON Data in Table on the web page
 		fetch('http://hapi.fhir.org/baseR4/Patient?_pretty=true').then(
 				res=>{
 					res.json().then(
 						data=>{
-							console.log(data);
+							console.log(data); 
 							var temp = "";
-						/*	//temp = data.entry[0].fullUrl;
-							temp = data.entry[0].resource.birthDate;
-							//temp = data.entry.length;
-							document.getElementById("data").innerHTML = temp;
-						*/	
+
 							for(let i = 0; i < data.entry.length; i++){
 								temp += "<tr>";
+
+								// check if name exits, sometime error if without this step
 								if(typeof data.entry[i].resource.name != "undefined"){temp += "<td>" + data.entry[i].resource.name[0].family + "</td>";
 								}else{temp += "<td>"+ "NameNotFound" +"</td>";}
 								
 								temp += "<td>" +"   "+ data.entry[i].resource.birthDate + "</td>";
 								temp += "<td>" +"   " + data.entry[i].resource.gender + "</td>";
 								
-
+								// check if name address, sometime error if without this step
 								if(typeof data.entry[i].resource.address != "undefined"){temp += "<td>" + data.entry[i].resource.address[0].city + "</td>";
 								}else{temp += "<td>"+ "CityNotFound" +"</td>";}
 
@@ -241,8 +225,7 @@ a:link {
 
 							for(let i = 0; i < data.entry.length; i++){
 								var string = (data.entry[i].resource.birthDate);
-								//let reg = /\d+/g;
-								//date = string.match(reg);
+
 								if(typeof data.entry[i].resource.birthDate != "undefined"){
 									numberOfAges = numberOfAges + 1;
 									date = parseInt(string, 10);
@@ -252,7 +235,10 @@ a:link {
 
 
 							}
+							//This average age does not have to be integer
 							avgAge = avgAge/numberOfAges;
+
+							//display the average age on web page
 							document.getElementById("averageAge").innerHTML = "Average of Ages: " + avgAge + " years old";
 
 						}
