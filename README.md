@@ -1,7 +1,7 @@
 # health-information-FHIR-web-application-project
 
 ## The documentation will be organized in 4 parts:
-##    1. what is the web application used for: 
+##    1. what is the web application used for
 ##    2. how does this web application look like
 ##    3. how you can test out my web application on your computer
 ##    4. how I implemented this project
