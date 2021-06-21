@@ -8,4 +8,10 @@ The documentation will be organized as 3 parts:
       - the Javascript code that I implemented to properly construct the query
 
 
+1. what it does and how it look:
+  
+  This project goal was to implement a simple web application that can fetch samples of patients from the FHIR server (https://hapi.fhir.org/resource?serverId=home_r4&pretty=false&_summary=&resource=Patient) and then display the basic statistics(nubmer of patients and average age of patients) and a simple table to list all the default retreived patients datas
+  
+  Below is how it look like if you open this project on Google Chrome browser
+
 ![Screen Shot 2021-06-21 at 3 33 25 AM](https://user-images.githubusercontent.com/59375616/122723888-70ac9d80-d241-11eb-968a-5e3f1a042cd4.png)
