@@ -62,7 +62,7 @@ Now I will explain how I implemented this project:
       
       If you have more question about this project, feel free to contact my through email. 
       
-      My email is : chaoglen.xu@mail.utoronto.ca
+      My email address is : chaoglen.xu@mail.utoronto.ca
       
       Thank you for your time!
 
