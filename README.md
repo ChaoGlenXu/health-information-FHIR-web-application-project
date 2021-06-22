@@ -60,7 +60,7 @@ Now I will explain how I implemented this project:
 
       Yeah, So that's the end of the documentation for this project. 
       
-      If you have more question about this project, feel free to contact my through email. 
+      If you have more question about this project, feel free to contact me through email. 
       
       My email address is : chaoglen.xu@mail.utoronto.ca
       
