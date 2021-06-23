@@ -11,8 +11,10 @@
 
 ## 1. what is the web application used for: 
 
-  what is the web application used for: 
-  This project goal was to implement a simple web application that can fetch samples of patients from the FHIR server (https://hapi.fhir.org/resource?serverId=home_r4&pretty=false&_summary=&resource=Patient) and then display the basic statistics(nubmer of patients and average age of patients) and a simple table to list all the default retreived patients datas
+   
+  This project goal was to implement a simple web application that can fetch samples of patients from the FHIR server (https://hapi.fhir.org/resource?serverId=home_r4&pretty=false&_summary=&resource=Patient) and then display the basic statistics(nubmer of patients and average age of patients) and a simple table to list all the default retreived patients data.
+  
+  The scenario that this web application could be used would be that doctors could use this web application to fetch the patient's data.
  
  I completed this web application project on June 20th, So the project goal was achieved.
  
