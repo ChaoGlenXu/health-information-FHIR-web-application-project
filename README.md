@@ -25,7 +25,7 @@
 ![Screen Shot 2021-06-21 at 6 54 08 AM](https://user-images.githubusercontent.com/59375616/122751228-7adc9500-d25d-11eb-85ad-d9c1ded9070f.png)
 
 
-##    3. how you can test out my web application on your computer
+##    3. how you can test out my web application on your computer:
 
 if you click the Button (New Tab for latest Data) after 15 minutes or just refresh the page, you call see the statistics and the data in the table will change
 
@@ -43,7 +43,7 @@ if you want to use this web application or test out this web application:
      
 ###    Note that my HTML code, CSS code, and Javascript code are all in this HTML file since this is a small project. 
       
-##    4. how I implemented this project
+##    4. how I implemented this project:
 
 Now I will explain how I implemented this project:
       I fist implemented some of the HTML code, then I added the style by coded the CSS code.
