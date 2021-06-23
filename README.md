@@ -58,7 +58,7 @@ Now I will explain how I implemented this project:
 
 ![Screen Shot 2021-06-21 at 5 48 51 AM](https://user-images.githubusercontent.com/59375616/122742836-5def9400-d254-11eb-8fe1-be99fa608290.png)
 
-      Yeah, So that's the end of the documentation for this project. 
+      Yeah, so that's the end of the documentation for this project. 
       
       If you have more question about this project, feel free to contact me through email. 
       
