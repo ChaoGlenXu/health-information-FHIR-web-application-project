@@ -16,7 +16,7 @@
  
  I completed this web application project on June 20th, So the project goal was achieved.
  
-##    2. how does this web application look like
+##    2. how does this web application look like:
 
   Below is how it look like if you open this project on Google Chrome browser
 
